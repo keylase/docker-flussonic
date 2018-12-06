@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+    flussonic:
+        image: keylase/flussonic
+        build: .
+        container_name: flussonic
+        ports:
+            - "80:80"
+            - "443:443"
+            - "554:554"
+            - "1935:1935"
+        volumes:
+            - ./data/log:/var/log/flussonic
+            - ./data/etc:/etc/flussonic
+
+
